@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage chez SUEZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <style>
+/* Style global */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e8f5e9; /* Vert pâle */
+    margin: 0;
+    padding: 0;
+    color: #333333; /* Couleur de texte neutre */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+.header {
+    background-color: #f0f9f9; /* Vert clair comme les cases */
+    color: #004d40; /* Vert foncé pour le texte */
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header img {
+    width: 160px; /* Ajustement de la taille du logo */
+    margin-bottom: 15px;
+}
+
+.header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5em;
+}
+
+/* Container principal */
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content {
+    background-color: white; /* Garde le fond des sections en blanc */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    margin-bottom: 40px;
+}
+
+/* Titres des sections */
+h2.section-title {
+    font-size: 2em;
+    color: #004d40; /* Vert foncé pour correspondre au vert des cases */
+    border-bottom: 3px solid #004d40;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Listes */
+ul {
+    list-style: disc inside;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 12px;
+}
+
+/* Section des cartes */
+.cards-container {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+}
+
+.card {
+    background-color: #f0f9f9; /* Vert clair comme les cases */
+    color: #004d40; /* Vert foncé pour le texte */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 280px; /* Largeur ajustée */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    margin: 10px 0;
+    font-size: 1.4em;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card p {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Images */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.switch-image,
+.powerbi-image {
+    border-radius: 10px;
+    width: 80%; /* Ajustement automatique */
+    height: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-powerbi {
+    width: 200px;
+    height: auto;
+}
+
+/* Carte Google Map */
+.map-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Bouton de retour */
+.back-button {
+    display: block;
+    width: 220px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #004d40; /* Vert foncé */
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1.1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #003d33; /* Plus foncé au survol */
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #004d40; /* Vert foncé */
+    color: white;
+    margin-top: 40px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .image-container {
+        flex-direction: column;
+    }
+
+    iframe {
+        height: 300px;
+    }
+
+    .back-button {
+        width: 200px;
+    }
+}
+
+/* Conteneur des tâches */
+.tasks-list {
+    display: flex;
+    flex-direction: column; /* Une ligne par tâche */
+    gap: 15px; /* Espacement entre chaque ligne */
+    margin-bottom: 40px; /* Espacement en bas de la section */
+}
+
+/* Style pour chaque tâche */
+.task-item {
+    background-color: #ffffff; /* Fond blanc */
+    border: 1px solid #cccccc; /* Bordure légère */
+    color: #333333; /* Couleur du texte sombre */
+    padding: 15px; /* Espacement interne */
+    border-radius: 8px; /* Bords arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    font-size: 1em; /* Taille de texte lisible */
+    font-weight: 500; /* Texte légèrement gras */
+    text-align: left; /* Alignement du texte à gauche */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Effet au survol */
+.task-item:hover {
+    transform: translateY(-5px); /* Légère élévation */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Ombre plus marquée */
+    border-color: #00796b; /* Bordure colorée */
+}
+
+/* Conteneur global */
+.key-figures-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Style des cases */
+.key-figure {
+    background-color: #f0f9f9; /* Vert clair comme les cases */
+    border: 2px solid #004d40; /* Bordure plus foncée */
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.key-figure:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Titre des chiffres */
+.key-figure h3 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    color: #004d40; /* Vert foncé */
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Description sous les chiffres */
+.key-figure p {
+    font-size: 1.1em;
+    color: #00796b; /* Vert plus doux pour le texte */
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* Encadrer chaque section */
+.section-box {
+    border: 2px solid #00796b; /* Bordure de couleur verte */
+    border-radius: 8px; /* Coins arrondis */
+    padding: 20px; /* Espace interne */
+    margin-bottom: 40px; /* Espacement en bas de chaque section */
+    background-color: #f0f9f9; /* Fond clair pour les sections */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
+}
+
+.section-box {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em; /* Taille de police ajustée */
+    color: #333333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+
+
+/* Section Mon expérience */
+.experience-section {
+    border: 2px solid #00796b; /* Bordure verte */
+    border-radius: 8px; /* Coins arrondis */
+    padding: 20px; /* Espace interne */
+    margin-bottom: 40px; /* Espacement en bas de la section */
+    background-color: #f0f9f9; /* Fond clair */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
+}
+
+.experience-section h2 {
+    font-size: 2em;
+    color: #004d40;
+    margin-bottom: 20px;
+}
+
+.experience-section p {
+    font-size: 1.2em;
+    color: #333;
+    line-height: 1.6;
+}
+
+.intro-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em; /* Ajuste la taille de la police */
+    color: #333333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="logo-suez.png" alt="Logo SUEZ">
+        <h1>Stage chez SUEZ</h1>
+    </div>
+
+    <div class="container">
+        <div class="content">
+    <h2 class="section-title">Présentation de SUEZ</h2>
+
+    <p class="intro-text">
+    <strong>SUEZ</strong> est une multinationale française spécialisée dans la gestion de l'eau et des déchets. 
+    Elle propose des solutions innovantes pour préserver les ressources naturelles et relever les défis 
+    environnementaux. Fondée en 1858, SUEZ est un acteur clé dans la gestion de l’eau potable, des déchets 
+    valorisables et des services numériques intelligents.
+</p>
+<p class="intro-text">
+    Présente dans plus de 70 pays, l’entreprise sert des millions de clients à travers des solutions durables 
+    comme le recyclage, la transformation des déchets en énergie, et les technologies numériques pour optimiser 
+    la gestion des ressources.
+</p>
+
+
+    <h2 class="section-title">Chiffres clés</h2>
+    <div class="key-figures-container">
+        <div class="key-figure">
+            <h3>17,2 Mds €</h3>
+            <p>Chiffre d'affaires</p>
+        </div>
+        <div class="key-figure">
+            <h3>86 500</h3>
+            <p>Salariés</p>
+        </div>
+        <div class="key-figure">
+            <h3>70+</h3>
+            <p>Pays d'activité</p>
+        </div>
+        <div class="key-figure">
+            <h3>66 M</h3>
+            <p>Personnes approvisionnées en eau</p>
+        </div>
+        <div class="key-figure">
+            <h3>31 M</h3>
+            <p>Clients pour le traitement des eaux usées</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- Section Tâches effectuées -->
+<div class="section-box">
+    <h2 class="section-title">Tâches effectuées</h2>
+    <div class="tasks-list">
+        <div class="task-item">Manutention informatique</div>
+        <div class="task-item">Formation sur Power BI</div>
+        <div class="task-item">Réseaux informatiques</div>
+        <div class="task-item">Apprentissage des switches et de leur fonctionnement</div>
+        <div class="task-item">Formation sur les réseaux et leur gestion</div>
+        <div class="task-item">Création de site internet avec OpenElement</div>
+        <div class="task-item">Mise à jour de système Windows</div>
+    </div>
+</div>
+
+<!-- Section Apprentissage des switches et de leur fonctionnement -->
+<div class="section-box">
+    <h2 class="section-title">Apprentissage des switches et de leur fonctionnement</h2>
+    <img src="image-suez-switch.jpg" alt="Image des switches" class="switch-image">
+    <p>Durant mon stage chez SUEZ, j'ai eu l'opportunité d'apprendre et de comprendre le fonctionnement des switches, ainsi que leur rôle crucial dans les réseaux informatiques. J'ai également acquis des compétences pratiques en gestion de réseaux, ce qui m'a permis d'améliorer mes connaissances techniques et d'optimiser les performances des infrastructures réseau.</p>
+</div>
+
+<!-- Section Utilisation de Power BI -->
+<div class="section-box">
+    <h2 class="section-title">Utilisation de Power BI</h2>
+    <div class="image-container">
+        <img src="logo-powerbi.jpg" alt="Logo Power BI" class="logo-powerbi">
+        <img src="image-powerbi.png" alt="Image Power BI" class="powerbi-image">
+    </div>
+    <p>Power BI est un outil d'analyse de données et de visualisation qui permet aux entreprises de mieux comprendre leurs données et de prendre des décisions éclairées.</p>
+    <p>Chez SUEZ, j'ai utilisé Power BI pour créer des tableaux de bord et des rapports, ce qui a permis à l'entreprise d'avoir une meilleure vision sur leur environnement. Par exemple, j'ai travaillé sur des projets visant à analyser le nombre de voitures dans le monde et le nombre de PC, fournissant ainsi des insights précieux pour les stratégies de l'entreprise.</p>
+</div>
+
+<!-- Section Mon expérience -->
+<div class="experience-section">
+    <h2 class="section-title">Mon expérience</h2>
+    <p>
+        Mon stage chez SUEZ a été une expérience extrêmement enrichissante. C'était ma première expérience en entreprise, et j'ai énormément apprécié chaque moment passé là-bas. 
+        Apprendre l'informatique dans un milieu professionnel m'a permis de comprendre l'importance de chaque concept appris et de le mettre en pratique de manière concrète. 
+        J'ai découvert un tout nouvel univers, non seulement sur l'informatique, mais aussi sur la vie en entreprise. C'était fascinant de voir comment une grande entreprise fonctionne au quotidien et comment chaque département contribue à la réussite collective.
+    </p>
+    <p>
+        Ce stage m'a permis de découvrir des aspects de la gestion des ressources, des réseaux et de l'innovation, tout en apprenant de nouvelles compétences techniques. Mais au-delà des aspects purement techniques, cette expérience m'a ouvert les yeux sur la réalité du travail en équipe, l'importance de la communication et de l'organisation dans un environnement professionnel. 
+        J'ai pu évoluer dans un cadre stimulant et dynamique, et cette expérience reste l'une des plus enrichissantes de mon parcours.
+    </p>
+</div>
+
+
+<!-- Section Localisation -->
+<div class="section-box">
+    <h2 class="section-title">Localisation</h2>
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2612.731502615229!2d2.453281315675845!3d48.68424917926651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e676a81b571217%3A0x2b7d3f58058fc191!2s51%20Avenue%20de%20S%C3%A9nart%2C%2091230%20Montgeron%2C%20France!5e0!3m2!1sen!2sus!4v1641616649070!5m2!1sen!2sus"
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+</div>
+
+        <a href="index.html" class="back-button">Retour à la page d'accueil</a>
+    </div>
+
+    <footer>
+        <p>© 2025 Mon Portfolio. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+            const updateCounter = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / 200;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(updateCounter, 1);
+                } else {
+                    counter.innerText = target.toLocaleString();
+                }
+            };
+            updateCounter();
+        });
+    </script>
+</body>
+</html>

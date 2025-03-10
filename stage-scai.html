@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage chez SCAI Finance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <style>
+/* Styles généraux */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #0066cc, #004080);
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.header img {
+    width: 120px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 15px; /* Coins arrondis mais un carré */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+.header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* Main container */
+.container {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Sections */
+.content {
+    background-color: #fff;
+    padding: 30px;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: #0066cc;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* Liste encadrée */
+.info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-list li {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.info-list li strong {
+    color: #004080;
+    font-weight: 600;
+}
+
+.info-list li:hover {
+    background-color: #e9e9e9;
+    border-color: #0066cc;
+    transform: scale(1.02);
+}
+
+/* Stat boxes */
+.stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.stat-box {
+    background-color: #0066cc;
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 250px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.stat-box h4 {
+    font-size: 1.6rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.stat-box p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.stat-box:hover {
+    background-color: #004080;
+    transform: translateY(-5px);
+}
+
+/* Cards for projects */
+.card {
+    background-color: #f9f9f9;
+    padding: 30px;
+    margin: 25px 0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card h3 {
+    font-size: 1.7rem;
+    color: #004080;
+    margin-bottom: 12px;
+}
+
+.card p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.back-button {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: #0066cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-left: 30px; /* Décalage vers la gauche */
+    display: inline-block;
+}
+
+}
+
+.back-button:hover {
+    background-color: #004080;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0066cc;
+    color: white;
+    margin-top: 60px;
+    font-size: 1.1rem;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+/* Responsiveness for mobile */
+@media screen and (max-width: 768px) {
+    .stats {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat-box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .header {
+        padding: 40px 20px;
+    }
+
+    .card {
+        padding: 20px;
+        margin: 15px 0;
+    }
+}
+
+/* Section localisation */
+.content iframe {
+    border-radius: 10px; /* Coins arrondis pour l'iframe */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre pour l'iframe */
+    margin-top: 20px;
+    max-width: 100%;
+}
+
+.content h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #0066cc;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Liste des tâches */
+.tasks-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tasks-list li {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.tasks-list li strong {
+    color: #004080;
+    font-weight: 600;
+}
+
+.tasks-list li:hover {
+    background-color: #e9e9e9;
+    border-color: #0066cc;
+    transform: scale(1.02);
+}
+
+/* Lien vers le site */
+.site-link {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #0066cc;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.site-link:hover {
+    background-color: #004080;
+    transform: scale(1.05);
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="logo-scai.png" alt="Logo SCAI Finance">
+        <h1>Stage chez SCAI Finance</h1>
+    </div>
+
+    <div class="content">
+    <h2>Présentation de l'entreprise SCAI Finance</h2>
+    <ul class="info-list">
+        <li>
+            <strong>Nom de l'entreprise :</strong> SCAI Finance
+        </li>
+        <li>
+            <strong>Secteur d'activité :</strong> Conseil en gestion de patrimoine, services financiers et solutions technologiques
+        </li>
+        <li>
+            <strong>Localisation :</strong> Milan, Italie
+        </li>
+        <li>
+            <strong>Nombre d'Employés :</strong> Environ 200
+        </li>
+    </ul>
+</div>
+
+
+        <!-- Groupe SCAI -->
+        <div class="content">
+            <h2>Présentation du Gruppo SCAI</h2>
+            <p>SCAI Finance fait partie du <strong>Gruppo SCAI</strong>, un groupe italien reconnu pour son expertise en services financiers, ainsi que pour ses solutions innovantes en technologies de l'information et de la communication. Le <strong>Gruppo SCAI</strong> regroupe plusieurs entreprises spécialisées dans des domaines variés, allant des technologies de l'information aux services financiers, en passant par la gestion d'actifs et le conseil stratégique. Ce groupe international est présent dans plusieurs pays et accompagne ses clients avec des solutions sur mesure qui répondent aux défis de la transformation numérique et de l'innovation technologique.</p>
+        </div>
+
+        <!-- Mission et Services -->
+        <div class="content">
+            <h2>Mission et Services</h2>
+            <p>SCAI Finance est une entreprise spécialisée dans le domaine des services financiers et du conseil, offrant des solutions en gestion de patrimoine, ainsi que des services de gestion de fonds pour des clients institutionnels et privés. L'entreprise se distingue par son expertise en technologie de la finance, notamment dans les domaines de la data science et de l'intelligence artificielle, pour optimiser les investissements et les stratégies financières de ses clients.</p>
+            <p>SCAI Finance met également un accent particulier sur l'innovation technologique et la transformation numérique des entreprises financières, permettant à ses clients de rester compétitifs sur les marchés mondiaux.</p>
+        </div>
+
+        <!-- Valeurs et Vision -->
+        <div class="content">
+            <h2>Valeurs et Vision</h2>
+            <p>L'entreprise valorise des principes d'innovation, de transparence et de responsabilité dans ses services financiers. Elle s'engage à fournir des solutions personnalisées et efficaces, en utilisant des technologies de pointe pour améliorer les performances des investissements tout en respectant les normes éthiques.</p>
+        </div>
+
+        <!-- Chiffres Clés -->
+        <!-- Chiffres Clés -->
+<div class="content">
+    <h2>Chiffres Clés</h2>
+    <div class="stats">
+        <div class="stat-box">
+            <h4>Présence Internationale</h4>
+            <p>Plus de 15 pays</p> <!-- Chiffre réel ici -->
+        </div>
+        <div class="stat-box">
+            <h4>Clients</h4>
+            <p>Plus de 300 clients institutionnels et privés</p> <!-- Chiffre réel ici -->
+        </div>
+        <div class="stat-box">
+            <h4>Années d'Expérience</h4>
+            <p>Plus de 25 ans d'expertise</p> <!-- Chiffre réel ici -->
+        </div>
+    </div>
+</div>
+
+<!-- Mes Tâches -->
+<div class="content">
+    <h2>Mes Tâches</h2>
+    <ul class="tasks-list">
+        <li>
+            <strong>Support pour Pirelli :</strong> J'ai travaillé en tant que prestataire pour l'entreprise <strong>Pirelli</strong>, en les aidant à établir des connexions sécurisées (HTTP, HTTPS, SSH, VNC) pour les machines dans les usines Pirelli à travers le monde via le logiciel <strong>Claroty</strong>.
+        </li>
+        <li>
+            <strong>Linux :</strong> J'ai appris le système <strong>Linux</strong>, son fonctionnement et son utilisation. Cela comprenait l'administration et la configuration de services essentiels.
+        </li>
+        <li>
+            <strong>Création de serveurs :</strong> J'ai créé et configuré des serveurs web (avec <strong>Apache 2</strong> et <strong>Nginx</strong>), mis en place un serveur <strong>DNS</strong> et même créé un <strong>serveur Minecraft</strong>.
+        </li>
+        <li>
+            <strong>Création de sites web :</strong> J'ai conçu des sites web en utilisant HTML et WordPress, ce qui m'a permis d'approfondir mes compétences en développement web.
+        </li>
+    </ul>
+</div>
+
+<!-- Site que j'ai réalisé -->
+<div class="content">
+    <h2>Site que j'ai réalisé</h2>
+    <p>
+        Vous pouvez consulter le site que j'ai réalisé en cliquant sur le lien ci-dessous :
+    </p>
+    <a href="sito/index.html" class="site-link" target="_blank">Voir le site</a>
+</div>
+
+
+<!-- Mon Expérience -->
+<div class="content">
+    <h2>Mon Expérience</h2>
+    <p>Durant mon stage chez SCAI Finance, j'ai eu la chance de découvrir de nombreux aspects enrichissants du monde professionnel. Ce que j'ai particulièrement apprécié, c'est la possibilité de découvrir le fonctionnement du travail dans d'autres pays, notamment en Italie. Cette expérience internationale m'a permis de mieux comprendre la culture professionnelle locale et de m'adapter à un environnement de travail différent.</p>
+    <p>J'ai également eu l'occasion d'explorer de nouvelles technologies et de développer mes compétences en informatique, notamment dans des domaines passionnants tels que linux et le support informatique. Cela m'a permis de me perfectionner et d'acquérir des compétences techniques précieuses pour ma carrière future.</p>
+    <p>Enfin, l'opportunité de travailler dans un environnement multilingue a été un véritable atout. Parler une autre langue au quotidien, en l'occurrence l'italien, m'a non seulement permis d'améliorer mes compétences linguistiques, mais aussi de mieux comprendre les dynamiques interculturelles au sein d'une équipe internationale.</p>
+    <p>Cette expérience m'a offert de nombreuses perspectives, tant sur le plan professionnel que personnel, et a renforcé ma passion pour le domaine de l'informatique et de la finance.</p>
+</div>
+
+
+<div class="content">
+    <h2>Localisation</h2>
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2697.7951980837355!2d9.189529!3d45.497894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c2ee1d52fe03%3A0xa3b1f56b3b462519!2s57%20Via%20Benigno%20Crespi%2C%2020177%20Milano%2C%20Italy!5e0!3m2!1sen!2sus!4v1674109273564!5m2!1sen!2sus" 
+        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</div>
+
+
+        <!-- Bouton retour -->
+        <a href="index.html" class="back-button">Retour à l'accueil</a>
+    </div>
+
+
+    <footer>
+        <p>© 2025 Mon Portfolio. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

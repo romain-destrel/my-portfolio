@@ -1,0 +1,548 @@
+/* Styles généraux */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f3f7fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    width: 85%;
+    margin: auto;
+}
+
+header {
+    background: linear-gradient(90deg, #0066cc, #003d99);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.8em;
+    margin: 0;
+}
+
+header p {
+    margin: 5px 0 15px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: background 0.3s ease-in-out;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.content {
+    background: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+    color: #0066cc;
+    margin-bottom: 15px;
+}
+
+.section {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.section img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-right: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section .description {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+/* Section des compétences linguistiques */
+.section {
+    display: flex;
+    justify-content: space-between; /* Espacement égal entre les éléments */
+    flex-wrap: wrap; /* Pour permettre aux éléments de se replier sur plusieurs lignes si nécessaire */
+    gap: 20px; /* Espacement entre les éléments */
+    margin-top: 20px;
+}
+
+.language {
+    text-align: center; /* Centre le contenu dans chaque élément */
+    width: 100px; /* Largeur uniforme pour chaque élément */
+}
+
+.flag {
+    width: 60px; /* Taille agrandie pour les drapeaux */
+    height: 60px; /* Taille agrandie pour les drapeaux */
+    object-fit: contain;
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    margin-bottom: 10px; /* Espacement sous les drapeaux */
+}
+
+.language-level {
+    font-size: 1.2em; /* Taille du texte pour le niveau de la langue */
+    color: #333; /* Couleur du texte */
+    font-weight: bold;
+}
+
+
+.btn {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    background-color: #0066cc;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #003d99;
+}
+ 
+
+.contact-info {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact-info a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+/* Améliorations esthétiques générales */
+
+.content {
+    background: #fdfdfd;
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease;
+}
+
+.content:hover {
+    transform: translateY(-5px);
+}
+
+.section div {
+    flex: 1;
+}
+
+h2 {
+    position: relative;
+    display: inline-block;
+}
+
+h2:after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #0066cc;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+nav a.active {
+    background: rgba(255, 255, 255, 0.4);
+    font-style: italic;
+}
+
+.btn img {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+/* Section "Projets Professionnels" */
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-card {
+    flex: 1 1 calc(50% - 20px);
+    background: #fdfdfd;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #666;
+    margin: 10px 0;
+}
+
+.project-card ul {
+    list-style: disc;
+    margin: 15px 0 0 20px;
+    color: #666;
+}
+
+.project-card ul li {
+    font-size: 1em;
+    margin-bottom: 8px;
+}
+
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact-form button {
+    align-self: center;
+    width: 150px;
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #003d99;
+}
+
+footer {
+    background: linear-gradient(90deg, #003d99, #0066cc);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #ffdd57;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.welcome-header {
+    background: linear-gradient(135deg, #00aaff, #0066cc); /* Couleurs dégradées bleues */
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-header h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #ffdd57; /* Couleur différente pour "Bienvenue sur mon portfolio" */
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-header p {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-header nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Augmente l'écart entre les liens */
+}
+
+.welcome-header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: background 0.3s ease-in-out, transform 0.3s ease;
+}
+
+.welcome-header nav a:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1); /* Ajoute un effet de zoom lors du survol */
+}
+
+
+
+.contact-info {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact-info p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.contact-info a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact-info a:hover {
+    color: #003d99;
+}
+
+.contact-info li {
+    margin: 10px 0;
+}
+
+/* Conteneur du bouton et du logo LinkedIn */
+#download {
+    display: flex;
+    justify-content: flex-start; /* Aligner à gauche */
+    align-items: center; /* Centrer verticalement */
+    gap: 20px; /* Espacement entre le bouton et le logo */
+    margin-top: 20px; /* Espacement au-dessus */
+}
+
+#download .linkedin-logo {
+    width: 40px;  /* Taille carrée */
+    height: 40px; /* Taille carrée */
+    border-radius: 10px; /* Coins arrondis */
+    object-fit: cover; /* Pour s'assurer que l'image couvre bien le carré */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+#download .linkedin-logo:hover {
+    transform: scale(1.1); /* Effet de zoom au survol */
+}
+
+#download a {
+    display: inline-block;
+}
+
+/* Formation - informations une au-dessus des autres */
+#formation .section {
+    display: block; /* Chaque élément prend toute la largeur */
+    margin-bottom: 20px;
+}
+
+#formation .section h3,
+#formation .section p {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+/* Section "Expériences professionnelles" */
+#experience .section {
+    display: flex;
+    justify-content: space-between; /* Alignement côte à côte avec espace entre les logos */
+    flex-wrap: wrap;
+    gap: 20px; /* Espacement entre les éléments */
+}
+
+#experience .section .company {
+    display: flex;
+    flex-direction: column; /* Alignement des éléments en colonne (logo en haut, nom en bas) */
+    align-items: center; /* Centrer les éléments horizontalement */
+    text-align: center;
+}
+
+#experience .section .company img {
+    height: 60px; /* Hauteur uniforme pour tous les logos */
+    object-fit: contain; /* Pour que l'image conserve son ratio */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre pour l'effet de profondeur */
+    transition: transform 0.3s ease;
+}
+
+/* Logo Crédit Agricole : carré */
+#experience .section .company img[src*="ca-pfm"] {
+    width: 60px; /* Taille carrée pour Crédit Agricole */
+    border-radius: 15px; /* Coins arrondis */
+}
+
+/* Autres logos : rectangulaires */
+#experience .section .company img:not([src*="ca-pfm"]) {
+    width: auto; /* Largeur automatique pour les logos rectangulaires */
+    max-width: 120px; /* Limiter la largeur pour éviter que les logos soient trop larges */
+    border-radius: 15px; /* Coins arrondis */
+}
+
+/* Effet au survol */
+#experience .section .company img:hover {
+    transform: scale(1.1); /* Effet de zoom au survol */
+}
+
+#experience .section .company .company-name {
+    font-size: 1.1em; /* Taille du texte pour les noms des entreprises */
+    color: #333;
+    margin-top: 10px; /* Espacement entre le logo et le nom */
+}
+
+#experience .section .company a {
+    display: block; /* Assure que toute la zone du logo est cliquable */
+    text-decoration: none; /* Supprime le soulignement du lien */
+}
+
+#experience .section .company a:hover img {
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
+    transition: transform 0.3s ease;
+}
+
+.specialties {
+    display: flex; /* Les boutons sont alignés côte à côte */
+    justify-content: center; /* Centre les boutons */
+    gap: 40px; /* Espace entre les deux boutons */
+    margin-top: 20px; /* Espace au-dessus des boutons */
+}
+
+.specialty-btn {
+    padding: 20px 40px; /* Plus de taille pour les boutons */
+    background-color: #0066cc; /* Couleur de fond */
+    color: white; /* Texte blanc */
+    font-size: 1.5em; /* Taille du texte plus grande */
+    border: none; /* Retire les bordures */
+    border-radius: 15px; /* Coins arrondis */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Légère ombre pour la profondeur */
+    cursor: pointer; /* Curseur en main */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.specialty-btn:hover {
+    background-color: #003d99; /* Couleur légèrement plus sombre au survol */
+    transform: scale(1.05); /* Légère augmentation de taille */
+}
+
+.specialty-info {
+    background: #f9f9f9; /* Fond clair */
+    border: 1px solid #ddd; /* Bordure fine */
+    border-radius: 15px; /* Coins arrondis */
+    padding: 20px; /* Espacement interne */
+    margin-top: 20px; /* Espace au-dessus de la section */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Légère ombre */
+}
+
+/* Conteneur de la liste des compétences */
+.skills-list {
+    display: flex; /* Aligner les éléments horizontalement */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne suivante si l'espace est insuffisant */
+    gap: 20px; /* Espacement entre chaque élément */
+    justify-content: center; /* Centrer les éléments horizontalement */
+    padding: 0;
+    margin-top: 20px;
+}
+
+/* Style des éléments de la liste (les carrés) */
+.skills-list li {
+    background-color: #f9f9f9; /* Fond clair */
+    padding: 20px; /* Espacement interne */
+    border-radius: 15px; /* Coins arrondis */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    width: 250px; /* Largeur de chaque carré */
+    text-align: center; /* Centrer le texte */
+    font-size: 1.1em;
+    color: #333; /* Couleur du texte */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet au survol de chaque carré */
+.skills-list li:hover {
+    transform: translateY(-5px); /* Légère remontée au survol */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Ombre plus marquée au survol */
+}
+
+

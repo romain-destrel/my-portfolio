@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stage chez Crédit Agricole</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <style>
+/* Style global */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Header */
+.header {
+  background-color: #1e3799;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.header img {
+  height: 100px;  /* Assure que les logos aient la même hauteur */
+  margin: 0 10px;  /* Espace entre les logos */
+}
+
+.header h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.8em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Container principal */
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* Section principale */
+.content {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 20px;
+}
+
+.content h2 {
+  font-family: 'Poppins', sans-serif;
+  color: #1e3799;
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+.content p {
+  margin-bottom: 20px;
+}
+
+
+/* Section Statistiques */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;  /* Répartir l'espace de manière égale */
+  gap: 20px;  /* Espacement entre les boîtes */
+  margin-bottom: 30px;
+}
+
+.stat-box {
+  background-color: #dfe4ea;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  flex: 1 1 calc(33.33% - 20px); /* Chaque boîte prend 1/3 de la largeur avec un espacement de 20px */
+  box-sizing: border-box; /* Inclut padding dans la largeur totale */
+  margin-bottom: 20px;
+  min-width: 280px;  /* Assure que la boîte ne devienne pas trop petite sur petits écrans */
+  transition: all 0.3s ease;  /* Transition douce pour les effets de survol */
+}
+
+.stat-box h3 {
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #1e3799;
+  margin-bottom: 10px;
+}
+
+.stat-box p {
+  font-size: 1.2em;
+  color: #555;
+}
+
+/* Effet de survol pour les boîtes */
+.stat-box:hover {
+  transform: translateY(-5px);  /* Décalage léger vers le haut */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);  /* Ombre plus marquée lors du survol */
+}
+
+/* Liste des tâches */
+.tasks {
+  margin-top: 30px;
+}
+
+.tasks ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.tasks li {
+  background: #ffffff;
+  margin: 12px 0;
+  padding: 15px;
+  border-left: 5px solid #1e3799;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1.1em;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.tasks li:hover {
+  background-color: #f1f1f1;
+}
+
+/* Map container */
+.map-container {
+  margin-top: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1e3799;
+  color: white;
+  margin-top: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.btn-retour {
+  display: inline-block;
+  background-color: #1e3799;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-retour:hover {
+  background-color: #0a3d62;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .stats {
+    flex-direction: column;
+  }
+
+  .stat-box {
+    margin-bottom: 15px;
+  }
+}
+
+.filiales-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.filiales-text {
+  flex-basis: 65%; /* Largeur pour la section texte */
+}
+
+.logo-container img {
+  max-height: 40px; /* Limite maximale pour les logos */
+  width: auto; /* Préserve les proportions */
+  margin: 10px 0; /* Espace entre les logos */
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Encadré spécifique pour le logo CA-PFM uniquement */
+.ca-pfm-logo-box {
+  background-color: white;      /* Fond blanc */
+  padding: 15px;                /* Un peu d'espace autour du logo */
+  border-radius: 15px;          /* Coins arrondis */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Ombre douce autour du logo */
+  display: inline-block;        /* Affiche le logo dans un bloc aligné */
+  margin-bottom: 20px;          /* Un peu d'espace sous le logo */
+  text-align: center;           /* Centrer le logo dans son conteneur */
+}
+
+/* Appliquer un style uniquement au logo "CA-PFM" */
+#logo-ca-pfm {
+  max-height: 100px;            /* Limite la hauteur du logo */
+  width: auto;                  /* Maintient les proportions du logo */
+  margin: 0 auto;               /* Centrer l'image */
+}
+
+/* Style des autres logos dans le header */
+.header img {
+  height: 100px;                /* Assure que les autres logos aient la même hauteur */
+  margin: 0 10px;               /* Espacement entre les logos */
+}
+
+
+
+
+
+  </style>
+</head>
+<body>
+ <div class="header">
+
+ <div class="ca-pfm-logo-box">
+  <img id="logo-ca-pfm" src="logo-ca-pfm2.png" alt="Logo Crédit Agricole">
+</div>
+
+
+  <h1>Stage chez Crédit Agricole PFM</h1>
+</div>
+
+
+  <div class="container">
+    <!-- Section entreprise -->
+    <div class="content">
+      <h2>Crédit Agricole Personal Finance & Mobility</h2>
+    
+      <div class="stats">
+        <div class="stat-box">
+          <h3>15</h3>
+          <p>Nombre de clients<br>en millions</p>
+        </div>
+        <div class="stat-box">
+          <h3 id="collaborators">0</h3>
+          <p>Collaborateurs dans le monde</p>
+        </div>
+        <div class="stat-box">
+          <h3 id="france">0</h3>
+          <p>Collaborateurs en France</p>
+        </div>
+        <div class="stat-box">
+          <h3 id="revenue">0</h3>
+          <p>Chiffre d'affaires (en milliards d'euros)</p>
+        </div>
+        <div class="stat-box">
+          <h3 id="countries">0</h3>
+          <p>Pays où l'entreprise est présente</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <h2>Crédit Agricole Personal Finance & Mobility (CA-PFM)</h2>
+
+      <ul>
+  <li><strong>Crédit Agricole Personal Finance & Mobility (CA-PFM)</strong> :
+    <ul>
+      <li>Division stratégique du groupe Crédit Agricole.</li>
+      <li>Spécialisée dans les services financiers pour accompagner les projets personnels et la mobilité des consommateurs.</li>
+      <li>Propose des solutions de financement variées et innovantes (crédit à la consommation, financement de véhicules, services associés).</li>
+    </ul>
+  </li>
+  <p>
+  <li><strong>Sofinco</strong> (marque phare de CA-PFM) :
+    <ul>
+      <li>Spécialisée dans le crédit à la consommation.</li>
+      <li>Mission : rendre le crédit accessible, flexible et transparent.</li>
+      <li>Offre : prêts personnels, crédits renouvelables, financements pour achats de biens ou services.</li>
+    </ul>
+  </li>
+  </p>
+  <p>
+  <li><strong>Atouts et positionnement</strong> :
+    <ul>
+      <li>Sofinco est reconnue comme une des marques leaders du secteur.</li>
+      <li>Capacité d'innovation constante pour répondre aux besoins des consommateurs modernes.</li>
+      <li>Soutenue par la solidité et la sécurité du groupe Crédit Agricole S.A.</li>
+      <li>Maintient une proximité avec les clients pour les accompagner au quotidien.</li>
+    </ul>
+  </li>
+  </p>
+  <p>
+  <li><strong>Engagement</strong> :
+    <ul>
+      <li>Combinaison d'expertise, innovation et diversité des services.</li>
+      <li>Objectif : être un partenaire de confiance grâce à des solutions sur mesure, efficaces et sûres.</li>
+    </ul>
+  </li>
+</ul>
+</p>
+
+<div class="content filiales-list">
+<div class="filiales-section">
+  <div class="filiales-text">
+    <h3>Filiales CA-PFM dans le monde</h3>
+    <ul>
+      <li>Sofinco - France</li>
+      <li>Agos Ducato - Italie</li>
+      <li>Credibom - Portugal</li>
+      <li>Creditplus Bank - Allemagne</li>
+      <li>Soyou - Espagne</li>
+      <li>Wafasalaf - Maroc</li>
+      <li>FCA Bank - 17 pays européens + Maroc</li>
+      <li>GAC-Sofinco - Chine</li>
+    </ul>
+  </div>
+  <div class="logo-container">
+    <img src="logo-sofinco.svg" alt="Logo Sofinco" class="sofinco-logo">
+    <img src="logo-agos.png" alt="Logo Agos" class="agos-logo">
+    <img src="logo-creditplus.png" alt="Logo Creditplus" class="creditplus-logo">
+  </div>
+</div>
+</div>
+
+
+
+    <!-- Section Services Numériques France -->
+    <div class="content">
+      <h2>Services Numériques France (SNF)</h2>
+      <p><strong>Services Numériques France : Qui sommes-nous ?</strong></p>
+      <p>SNF assure le fonctionnement quotidien du Système d'Information (SI) de CA CF France, en partenariat avec CA-GIP (Crédit Agricole Group Infrastructure Platform) qui gère la production informatique. Les experts SNF conseillent et accompagnent les entités de CA CF, au quotidien et dans les projets, pour développer des solutions digitales adaptées aux besoins de nos clients.</p>
+      <p>Au service de la stratégie de l'entreprise, nous modernisons et rationalisons le Système d'Information en favorisant les synergies avec les autres entités du groupe CA CF et de CA S.A.</p>
+      <p><strong>Les objectifs ?</strong></p>
+      <ul>
+        <li>Doter CA CF France d'un Système d'Information robuste, industriel et centré sur le client ;</li>
+        <li>Délivrer des services de qualité au quotidien et dans les projets ;</li>
+        <li>Développer l'innovation et le digital au service des métiers.</li>
+      </ul>
+    </div>
+
+    <div class="content tasks">
+      <h2>Tâches effectuées</h2>
+      <ul>
+        <li>Prendre les informations de l'ADDS et les mettre dans un fichier Excel via PowerShell</li>
+        <li>Mettre à jour des kits de survie pour les applications de l'entreprise</li>
+        <li>Générer des certificats valides (idnomic)</li>
+        <li>Prendre les infos d'un site obsolète et les mettre en local pour libérer le serveur</li>
+        <li>Réaliser des veilles de sécurité pour l'entreprise</li>
+        <li>Faire des schémas de liaison entre les différentes applications</li>
+      </ul>
+    </div>
+
+    <div class="content">
+  <h2>Mon expérience</h2>
+  <p>Travailler pour le groupe Crédit Agricole a été une expérience enrichissante et stimulante. J'ai eu l'occasion de découvrir des domaines variés et d'acquérir des compétences précieuses grâce à la diversité des missions qui m'ont été confiées. Le dynamisme et la collaboration au sein des équipes m'ont permis de progresser tant sur le plan professionnel que personnel.</p>
+  <p>Ce stage m'a offert une immersion dans un environnement innovant et exigeant, où l'on est constamment amené à relever des défis et à développer des solutions concrètes. J'ai beaucoup apprécié l'ouverture d'esprit et la bienveillance des collaborateurs, qui sont toujours prêts à partager leur expertise.</p>
+  <p>En résumé, ce stage m'a permis non seulement d'acquérir des compétences techniques, mais aussi de mieux comprendre les enjeux d'une grande entreprise tournée vers l'innovation et la satisfaction client.</p>
+</div>
+
+
+    <!-- Section localisation -->
+    <div class="content">
+      <h2>Localisation</h2>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2612.731502615229!2d2.263254!3d48.730160!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e676a81b571217%3A0x2b7d3f58058fc191!2s1%20rue%20Victor%20Basch%2C%2091300%20Massy%2C%20France!5e0!3m2!1sen!2sus!4v1674109273564!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <!-- Bouton retour -->
+    <a href="index.html" class="btn-retour">Retour</a>
+  </div>
+
+  <footer>
+    <p>© 2025 Mon Portfolio. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    // Animation des chiffres
+    function animateValue(id, start, end, duration) {
+      let range = end - start;
+      let current = start;
+      let increment = end > start ? 25 : -25; // Vitesse par défaut
+      let stepTime = Math.abs(Math.floor(duration / range));
+      let obj = document.getElementById(id);
+      let timer = setInterval(function() {
+        current += increment;
+        obj.textContent = current;
+        if (current >= end) {
+          clearInterval(timer);
+          obj.textContent = end.toLocaleString(); // Afficher la valeur finale correctement
+        }
+      }, stepTime);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      animateValue('collaborators', 0, 10000, 1000); // Vitesse par défaut
+      animateValue('france', 0, 3000, 10);
+      animateValue('revenue', 0, 24, 50);
+      animateValue('clients', 0, 15000000, 10); // Valeur finale de 15 millions
+      animateValue('countries', 0, 19, 10);
+    });
+  </script>
+</body>
+</html>
