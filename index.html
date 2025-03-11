@@ -1,236 +1,232 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de Romain DESTREL</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>インデックスページ</title>
+    <style>
+        body {
+            background-color: #e6f7ff;
+            color: #333;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        #google_translate_element {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #0099cc;
+            padding: 5px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+        #google_translate_element img {
+            height: 20px;
+            margin-right: 8px;
+        }
+        .goog-te-banner-frame.skiptranslate {
+            display: none !important;
+        }
+        body {
+            top: 0px !important;
+        }
+        .goog-logo-link {
+            display: none !important;
+        }
+        .goog-te-gadget {
+            color: white !important;
+        }
+        nav {
+            background-color: #0099cc;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            padding: 20px;
+            background-color: #cceeff;
+            margin: 20px;
+            border-radius: 10px;
+        }
+        h1, h2 {
+            color: black;
+        }
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .card {
+            background-color: #f2f2f2;
+            border: 2px solid #0099cc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        #clock {
+            margin-top: 10px;
+            font-size: 2em;
+            color: #ff4500;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #clock span {
+            display: inline-block;
+            margin: 0 5px;
+        }
+        #weather {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-align: left;
+            background-color: #0099cc;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #weather img {
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        #weather-details {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'ja',
+                includedLanguages: 'en,fr,es,de,it,pt,zh-CN,ru',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
-    <div class="welcome-header">
-        <h1>Romain DESTREL</h1>
-        <h2>Bienvenue sur mon portfolio</h2>
-        <p>Découvrez mon parcours, mes compétences, et mes projets professionnels.</p>
-        <nav> 
-            <a href="#presentation">Présentation</a>
-            <a href="#formation">Formation</a>
-            <a href="#competences">Compétences</a>
-            <a href="#experience">Expérience</a>
-            <a href="#projets">Projets</a>
-            <a href="#download">Téléchargements</a>
-            <a href="veille-techno.html">Veille technologique</a>
-        </nav>
-    </div>
-
-    <div class="container">
-        <div class="content" id="presentation">
-            <h2>Présentation</h2>
-            <p>Je m'appelle <strong>Romain DESTREL</strong>, étudiant en <strong>BTS SIO (Services Informatiques aux Organisations)</strong> au lycée Parc de Vilgénis à Massy, option <strong>SISR</strong> (Solutions d'Infrastructure, Systèmes et Réseaux). Cette option se concentre sur la gestion des infrastructures réseaux, la virtualisation, l'administration de systèmes informatiques, et le support technique.</p>
-            <p>Au cours de mon parcours académique et de ma formation actuelle, j'ai acquis des compétences variées dans les domaines des services et des technologies de l'information, notamment en administration réseau, développement web, virtualisation et bien plus encore.</p>
+    <header>
+        <h1>ようこそ</h1>
+        <div id="clock"></div>
+        <div id="weather">Chargement de la météo...</div>
+        <div id="google_translate_element">
+            <div></div>
         </div>
-
-        <div class="content" id="bts-sio">
-    <h2>Qu'est-ce que le BTS SIO ?</h2>
-    <p>Le BTS SIO (Services Informatiques aux Organisations) est une formation en deux ans qui prépare aux métiers de l'informatique. Il propose deux spécialités : <strong>SISR</strong> et <strong>SLAM</strong>, permettant de se spécialiser dans l'administration des systèmes et réseaux ou dans le développement d'applications.</p>
-
-    <div class="specialties">
-        <button id="sisr-btn" class="specialty-btn">SISR</button>
-        <button id="slam-btn" class="specialty-btn">SLAM</button>
-    </div>
-
-    <div id="sisr-info" class="specialty-info" style="display: none;">
-        <h3>Option SISR</h3>
-        <p>Cette spécialité (Solutions d’Infrastructure, Systèmes et Réseaux) forme aux métiers liés à l’administration, à la sécurisation et à la maintenance des infrastructures informatiques d’une organisation.</p>
-    </div>
-
-    <div id="slam-info" class="specialty-info" style="display: none;">
-        <h3>Option SLAM</h3>
-        <p>Cette spécialité (Solutions Logicielles et Applications Métiers) forme aux métiers liés à la conception, au développement et à la maintenance d’applications logicielles adaptées aux besoins des entreprises.</p>
-    </div>
-</div>
-
-<script>
-    document.getElementById('sisr-btn').addEventListener('click', function () {
-        document.getElementById('sisr-info').style.display = 'block';
-        document.getElementById('slam-info').style.display = 'none';
-    });
-
-    document.getElementById('slam-btn').addEventListener('click', function () {
-        document.getElementById('sisr-info').style.display = 'none';
-        document.getElementById('slam-info').style.display = 'block';
-    });
-</script>
+    </header>
+    <nav>
+        <a href="newindex.html">Seconde page</a>
+        <a href="mnc-site.html">Site de Minecraft</a>
+        <a href="match.html">EURO 2024</a>
+        <a href="video-euro.html">Video</a>
+        <a href="calculatrice.html">Calculatrice</a>
+        <a href="convert.html">Convert</a>
+        <a href="wordpress">Wordpress</a>
 
 
-        <div class="content" id="formation">
-            <h2>Formation</h2>
-            <div class="section">
-                <h3>BTS SIO SISR (Solution d'Infrastructure Système et Réseau)</h3>
-                <p>Lycée Parc de Vilgénis, Massy (Actuellement en cours)</p>
-            </div>
-            <div class="section">
-                <h3>Baccalauréat Système Numérique RISC (Réseaux Informatiques et Systèmes Communicants)</h3>
-                <p>Lycée Georges Brassens, Evry (2020 - 2023)</p>
-            </div>
+
+
+
+
+
+    </nav>
+    <section>
+        <h2>イントロダクション</h2>
+        <div class="card">
+            <p>これはインデックスページです。ここでは、いくつかの基本的な情報とナビゲーションリンクを提供します。次のページに進むには、上記の「Seconde page」をクリックしてください。</p>
         </div>
-
-       <div class="content" id="competences">
-    <h2>Compétences linguistiques</h2>
-    <div class="section">
-        <div class="language">
-            <img src="drapeau-fr.png" alt="Français" class="flag">
-            <div class="language-level">Natif</div>
+    </section>
+    <section>
+        <h2>内容</h2>
+        <div class="card">
+            <p>このセクションでは、さらに詳しい情報を提供します。各セクションは異なる背景色を持ち、視覚的に区別されます。</p>
         </div>
-        <div class="language">
-            <img src="drapeau-uk.png" alt="Anglais" class="flag">
-            <div class="language-level">Intermédiaire</div>
-        </div>
-        <div class="language">
-            <img src="drapeau-it.png" alt="Italien" class="flag">
-            <div class="language-level">Courant</div>
-        </div>
-    </div>
-</div>
-
-
- <div class="content" id="skills">
-    <h2>Compétences techniques</h2>
-    <ul class="skills-list">
-        <li>Logiciel (Power BI, Word, Excel, Powerpoint, Canva)</li>
-        <li>Programmation (HTML, CSS, PHP, SQL)</li>
-        <li>Support informatique</li>
-        <li>Travail en équipe & communication</li>
-        <li>Virtualisation (VirtualBox)</li>
-        <li>Équipements réseaux (Cisco)</li>
-        <li>Création de site Web</li>
-        <li>Administration de systèmes (Windows Server, Linux)</li>
-        <li>Configuration de réseaux (TCP/IP, DHCP, DNS, VPN)</li>
-        <li>Sécurité informatique (pare-feu, antivirus, IDS/IPS)</li>
-        <li>Gestion de projet informatique</li>
-        <li>Wi-Fi et connectivité (Configuration de points d’accès)</li>
-        <li>Analyse des logs (Wireshark, Syslog)</li>
-
-    </ul>
-</div>
-
-
-
-   <div class="content" id="experience">
-    <h2>Expériences professionnelles</h2>
-    <div class="section">
-        <div class="company">
-            <a href="stage-suez.html">
-                <img src="logo-suez.png" alt="Logo SUEZ">
-            </a>
-            <div class="company-name">SUEZ</div>
-        </div>
-        <div class="company">
-            <a href="stage-ca-pfm.html">
-                <img src="logo-ca-pfm.png" alt="Logo Crédit Agricole">
-            </a>
-            <div class="company-name">Crédit Agricole Personal Finance & Mobility</div>
-        </div>
-        <div class="company">
-            <a href="stage-scai.html">
-                <img src="logo-scai.png" alt="Logo SCAI Finance">
-            </a>
-            <div class="company-name">SCAI Finance</div>
-        </div>
-    </div>
-</div>
-
-
-
-
-      <div class="content" id="projets">
-    <h2>Projets Professionnels</h2>
-    <div class="projects">
-        <!-- Projet Station F -->
-        <div class="project-card">
-            <h3>Projet Station F</h3>
-<p><strong>Projet réalisé sur deux années dans le cadre de mon BTS SIO</strong></p>
-<p>Station F est le plus grand campus de startups au monde, situé dans la Halle Freyssinet à Paris. Il abrite plus de 3 000 startups et offre une infrastructure technologique avancée pour soutenir leur activité.</p>
-
-<p><strong>Contexte du Projet</strong></p>
-<p>En tant que technicien réseau et système au sein de l'entreprise fictive <em>ESN Synergis</em>, j’ai participé à la gestion et à l’optimisation du réseau informatique de Station F. Le système d’information devait répondre aux besoins spécifiques des startups tout en maintenant une infrastructure évolutive, sécurisée et performante.</p>
-
-<p><strong>Tâches Réalisées</strong></p>
-<ul>
-    <li><strong>Proposition matérielle :</strong> Élaboration d’une solution adaptée aux besoins de Station F en termes de serveurs, commutateurs et autres équipements réseau.</li>
-    <li><strong>Cahier des charges :</strong> Rédaction complète décrivant les objectifs, contraintes et spécifications techniques.</li>
-    <li><strong>Administration réseau :</strong>
-        <ul>
-            <li>Configuration de VLAN pour segmenter le trafic réseau.</li>
-            <li>Déploiement et sécurisation du Wi-Fi.</li>
-        </ul>
-    </li>
-    <li><strong>Administration système :</strong>
-        <ul>
-            <li>Mise en place d’un serveur DHCP pour l’attribution dynamique des adresses IP aux startups.</li>
-            <li>Configuration d’un serveur de fichiers pour gérer les profils utilisateurs avec des lecteurs personnalisés.</li>
-            <li>Application des droits NTFS pour garantir un accès sécurisé aux répertoires personnels et partagés.</li>
-            <li>Déploiement d’une GPO de mappage permettant d’automatiser la connexion aux lecteurs réseau (personnels et partagés).</li>
-        </ul>
-    </li>
-    <li><strong>Maintenance et amélioration :</strong>
-        <ul>
-            <li>Mise à jour du matériel et des logiciels réseau pour garantir leur fiabilité et performance.</li>
-            <li>Surveillance proactive du réseau pour détecter et résoudre rapidement les incidents.</li>
-        </ul>
-    </li>
-</ul>
-
-<p><strong>Compétences Développées</strong></p>
-<ul>
-    <li>Gestion des infrastructures réseau et système complexes.</li>
-    <li>Maîtrise des technologies de virtualisation, des GPO et des services réseau (DHCP, ADDS, VLANs).</li>
-    <li>Mise en place d’une gestion sécurisée des utilisateurs et des ressources partagées.</li>
-    <li>Collaboration en équipe pour garantir la qualité du service informatique.</li>
-</ul>
-
-        </div>
-
-        <!-- Autres projets ici -->
-    </div>
-</div>
-
-
-   <div class="content" id="contact">
-        <h2>Contactez-moi</h2>
-        <form action="mailto:destrelromain@gmail.com" method="post" enctype="text/plain" class="contact-form">
-            <label for="name">Nom :</label>
-            <input type="text" id="name" name="name" placeholder="Votre nom" required>
-
-            <label for="email">Email :</label>
-            <input type="email" id="email" name="email" placeholder="Votre email" required>
-
-            <label for="message">Message :</label>
-            <textarea id="message" name="message" placeholder="Votre message" rows="5" required></textarea>
-
-            <button type="submit" class="btn">Envoyer</button>
-        </form>
-        </div>
-
-        <div class="contact-info">
-        <ul>
-            <li><strong>Email :</strong> <a href="mailto:destrelromain@gmail.com">destrelromain@gmail.com</a></li>
-            <li><strong>Téléphone :</strong> <a href="tel:+33612345678">+33 7 83 53 96 31</a></li>
-        </ul>
-        </div>
-
-        <div class="content" id="download">
-            <a href="Tableau de synthese - Destrel Romain.xlsx" class="btn" download>Tableau de synthèse</a>
-            <a href="CV-Romain-DESTREL.pdf" class="btn" download>Télécharger le CV</a>
-            <a href="https://www.linkedin.com/in/romain-destrel-00a318290/" target="_blank">
-        <img src="logo-linkedin.png" alt="LinkedIn" class="linkedin-logo">
-            </a>
-        </div>
-    </div>
-
+    </section>
     <footer>
-        <p>© 2025 Mon Portfolio. Tous droits réservés.</p>
+        <p>&copy; 2024 インデックスページ</p>
     </footer>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('clock').textContent = timeString;
+        }
 
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        function getWeatherIcon(description) {
+            if (description.includes('nuageux')) {
+                return 'https://icons.iconarchive.com/icons/iconsmind/outline/512/Cloud-icon.png';
+            } else if (description.includes('soleil') || description.includes('clair')) {
+                return 'https://icons.iconarchive.com/icons/iconsmind/outline/512/Sun-icon.png';
+            } else if (description.includes('pluie')) {
+                return 'https://icons.iconarchive.com/icons/iconsmind/outline/512/Rain-icon.png';
+            } else {
+                return 'https://icons.iconarchive.com/icons/iconsmind/outline/512/Weather-icon.png';
+            }
+        }
+
+        function updateWeather() {
+            const apiKey = '7a6eaf51ccd8522498e8a2b9ecbd0e7b'; // Remplacez par votre clé API OpenWeatherMap
+            const city = 'Milan';
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=fr`;
+
+            console.log(`Fetching weather data from: ${url}`); // Debug log
+
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Weather data:', data); // Debug log
+                    const weatherDescription = data.weather[0].description;
+                    const temperature = data.main.temp;
+                    const weatherIcon = getWeatherIcon(weatherDescription);
+                    const weatherText = `Météo à Milan : ${weatherDescription}, ${temperature}°C`;
+
+                    const weatherElement = document.getElementById('weather');
+                    weatherElement.innerHTML = `<div id="weather-details"><img src="${weatherIcon}" alt="${weatherDescription}" height="40">${weatherText}</div>`;
+                })
+                .catch(error => {
+                    document.getElementById('weather').textContent = 'Erreur lors de la récupération des données météo.';
+                    console.error('Erreur lors de la récupération des données météo:', error);
+                });
+        }
+
+        updateWeather();
+    </script>
 </body>
 </html>
+
+
+
+
+
+
+
